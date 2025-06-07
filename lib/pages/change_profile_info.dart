@@ -12,16 +12,16 @@ class _ChangeProfileInfoPageState extends State<ChangeProfileInfoPage> {
   final _formKey = GlobalKey<FormState>();
 
   final TextEditingController _nameController = TextEditingController(
-    text: "John Doe",
+    text: "Bear grills",
   );
   final TextEditingController _emailController = TextEditingController(
-    text: "john.doe@example.com",
+    text: "BearGrills.wild@example.com",
   );
   final TextEditingController _phoneController = TextEditingController(
     text: "+1 234 567 890",
   );
   final TextEditingController _addressController = TextEditingController(
-    text: "123 Main St, City, Country",
+    text: "123 Main St, Vishakapatnam, India",
   );
 
   @override
@@ -77,7 +77,6 @@ class _ChangeProfileInfoPageState extends State<ChangeProfileInfoPage> {
                 ),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    // Save info logic here
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text('Profile info updated')),
                     );
@@ -88,6 +87,7 @@ class _ChangeProfileInfoPageState extends State<ChangeProfileInfoPage> {
                   'Save Changes',
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.bold,
+                    color: Colors.white,
                     fontSize: 18,
                   ),
                 ),

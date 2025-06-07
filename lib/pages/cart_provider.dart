@@ -29,6 +29,11 @@ class CartProvider with ChangeNotifier {
     }
     notifyListeners();
   }
+  
+  void clearCart() {
+  _items.clear();
+  notifyListeners();
+  }
 
   int get total =>
       _items.fold(0, (sum, item) => sum + item.price * item.quantity);

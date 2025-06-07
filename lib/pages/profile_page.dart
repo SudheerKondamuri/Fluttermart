@@ -8,11 +8,6 @@ import 'package:fluttermart/pages/wishlist_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProfilePage extends StatefulWidget {
-  /*final String userName = 'John Doe';
-  final String userEmail = 'johndoe919@gmail.com';
-  final String userPhone = '+91 9894032919';
-  final Image userImage = Image.asset('assets/images/avatar_image.png');*/
-
   const ProfilePage({super.key});
 
   @override
@@ -54,7 +49,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'John Doe',
+                        'Bear grills',
                         style: GoogleFonts.poppins(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -63,7 +58,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       const SizedBox(height: 6),
                       Text(
-                        'johndoe919@gmail.com',
+                        'bearGrills92@gmail.com',
                         style: GoogleFonts.poppins(
                           fontSize: 16,
                           color: Colors.white70,
@@ -159,8 +154,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   context,
                 );
                 if (shouldLogout == true) {
-                  // TODO: Add your logout logic here.
-                  // For example, navigate back to login or pop all routes:
                   Navigator.of(context).popUntil((route) => route.isFirst);
                 }
               },

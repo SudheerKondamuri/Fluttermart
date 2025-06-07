@@ -35,25 +35,57 @@ class HelpSupportPage extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             faqItem(
-              question: 'How do I place an order?',
+              question: 'Can I cancel my order?',
               answer:
-                  'Browse the products, add them to your cart, and proceed to checkout.',
+                  '''Yes, orders can be canceled before they are shipped. 
+                  Visit "My Orders" to request cancellation.''',
             ),
             faqItem(
-              question: 'How do I track my order?',
+              question: 'Do you offer international shipping?',
               answer:
-                  'Go to "My Orders" in your profile to see order status and details.',
+                  'Currently, we ship only within India. Stay tuned for international delivery updates.',
             ),
             faqItem(
-              question: 'What is the return policy?',
+              question: 'What payment methods are accepted?',
               answer:
-                  'You can return items within 30 days of delivery. Check our return policy for more info.',
+                  'We accept UPI, credit/debit cards, net banking, and wallet payments.',
             ),
             faqItem(
-              question: 'How do I contact customer support?',
+              question: 'Is my payment information secure?',
               answer:
-                  'You can reach us via email at support@fluttermart.com or call +1 234 567 890.',
+                  '''Yes, all payments are processed through secure, 
+                  encrypted gateways to ensure your safety.''',
             ),
+            faqItem(
+              question: 'Do I need an account to place an order?',
+              answer:
+                  '''Yes, you need to create an account to manage orders, track shipments,
+                   and access support.''',
+            ),
+            faqItem(
+              question: 'How can I update my shipping address?',
+              answer:
+                  '''Go to your profile settings, then tap on "Address Book" 
+                  to edit or add new addresses.''',
+            ),
+            faqItem(
+              question: 'What if I received a damaged item?',
+              answer:
+                  '''Please report the issue within 48 hours of delivery with photos. 
+                  We’ll assist with a replacement or refund.''',
+            ),
+            faqItem(
+              question: 'How long does delivery take?',
+              answer:
+                  'Standard delivery takes 3–7 business days, depending on your location.',
+            ),
+            faqItem(
+              question: 'Can I schedule delivery?',
+              answer:
+                  '''Currently, scheduled delivery is not supported. 
+                  We’ll notify you as soon as your order is shipped.''',
+            ),
+
           ],
         ),
       ),

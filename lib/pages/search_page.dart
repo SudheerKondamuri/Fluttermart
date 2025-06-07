@@ -23,10 +23,10 @@ class _SearchPageState extends State<SearchPage> {
     'Watch',
   ];
   final List<String> _popularImages = [
-    'assets/images/lampbg.jpg',
-    'assets/images/lampbg.jpg',
-    'assets/images/lampbg.jpg',
-    'assets/images/lampbg.jpg',
+    'assets/images/bed4.jpg',
+    'assets/images/sofa6.jpg',
+    'assets/images/lamp2.jpg',
+    'assets/images/table4.jpg',
   ];
   List<String> _searchResults = [];
 
@@ -133,13 +133,12 @@ class _SearchPageState extends State<SearchPage> {
                 runSpacing: 10,
                 children:
                     [
-                      'Clothes',
-                      'Mobiles',
                       'Sofas',
                       'Tables',
-                      'Shoes',
                       'Lamps',
-                      'Watches',
+                      'Chairs',
+                      'shelfs',
+                      'Furniture'
                     ].map((category) {
                       return GestureDetector(
                         onTap: () => _navigateToCategory(category),

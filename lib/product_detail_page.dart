@@ -3,7 +3,6 @@ import 'package:fluttermart/pages/cart_provider.dart';
 import 'package:fluttermart/pages/cart_screen.dart';
 import 'package:provider/provider.dart';
 import 'models/product.dart';
-
 import 'widgets/overlay_helpers.dart';
 import 'package:google_fonts/google_fonts.dart';
 

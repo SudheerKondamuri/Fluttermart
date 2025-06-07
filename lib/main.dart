@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'FlutterMart',
+      title: 'Flutter Mart',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         splashColor: const Color(0xFF424242).withOpacity(0.5),

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'cart_provider.dart';
 // import 'models/product.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'order_successful_popup.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -10,7 +11,7 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<CartProvider>(context);
-
+    final isCartEmpty = cart.items.isEmpty;
     return Scaffold(
       backgroundColor: Colors.grey.shade900,
       appBar: AppBar(
@@ -126,23 +127,32 @@ class CartScreen extends StatelessWidget {
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFFC9A86B),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+    style: ElevatedButton.styleFrom(
+                      backgroundColor: isCartEmpty ? Colors.grey[800] : const Color(0xFFC9A86B),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    ),
+                    onPressed: isCartEmpty
+                        ? null
+                        : () {
+                            showDialog(
+                              context: context,
+                              barrierDismissible: true,
+                              builder: (_) => const OrderSuccessPopup(),
+                            );
+                            Future.delayed(const Duration(milliseconds: 100), () {
+                              Provider.of<CartProvider>(context, listen: false).clearCart();
+                            });
+                          },
+                    child: Text(
+                      isCartEmpty ? 'No items in cart' : 'Place Order',
+                      style: TextStyle(
+                        color: isCartEmpty ? const Color(0xFFC9A86B) : Colors.black87,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        fontFamily: 'Poppins',
+                      ),
+                    ),
                   ),
-                ),
-                onPressed: () {},
-                child: Text(
-                  'Buy now',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                    fontFamily: 'Poppins',
-                  ),
-                ),
-              ),
             ),
           ],
         ),

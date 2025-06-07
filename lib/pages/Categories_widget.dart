@@ -43,7 +43,6 @@ class _ProductItemsState extends State<ProductItems> {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Category Buttons
                 Padding(
                   padding: const EdgeInsets.only(top: 25),
                   child: SizedBox(
@@ -92,7 +91,6 @@ class _ProductItemsState extends State<ProductItems> {
 
                 const SizedBox(height: 20),
 
-                // Product Grid
                 Expanded(
                   child:
                       products.isEmpty

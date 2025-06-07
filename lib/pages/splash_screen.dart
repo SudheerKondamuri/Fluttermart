@@ -1,7 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'splash_bridge.dart'; // This should lead to your Home screen or intro logic
+import 'splash_bridge.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -28,7 +28,6 @@ class SplashScreen extends StatelessWidget {
       splashIconSize: 250,
       duration: 2500,
       splashTransition: SplashTransition.fadeTransition,
-      //pageTransitionType: PageTransitionType.rightToLeft,
       nextScreen: const SplashBridge(),
     );
   }

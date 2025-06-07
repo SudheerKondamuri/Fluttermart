@@ -21,7 +21,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
   void onCategoryTap(int categoryIndex) {
     setState(() {
       discoverInitialIndex = categoryIndex;
-      currentIndex = 1; // Switch to Discover tab
+      currentIndex = 1;
     });
   }
 

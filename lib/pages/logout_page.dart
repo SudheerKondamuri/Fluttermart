@@ -33,7 +33,7 @@ Future<bool?> showLogoutConfirmationDialog(BuildContext context) {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFFC9A86B), // Your app's gold color
+              backgroundColor: const Color(0xFFC9A86B),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
               ),

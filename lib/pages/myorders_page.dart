@@ -23,7 +23,7 @@ class MyOrdersPage extends StatelessWidget {
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(20),
-        itemCount: 5, // Example number of orders
+        itemCount: 6,
         itemBuilder: (context, index) {
           return Card(
             color: Colors.grey.shade800,
@@ -48,10 +48,10 @@ class MyOrdersPage extends StatelessWidget {
                 style: GoogleFonts.poppins(
                   color: const Color(0xFFC9A86B),
                   fontWeight: FontWeight.bold,
+                  fontSize: 20
                 ),
               ),
               onTap: () {
-                // Navigate to order details page (future)
               },
             ),
           );

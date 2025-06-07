@@ -144,8 +144,8 @@ class _ListItemPageState extends State<ListItemPage> {
                                     Icons.favorite,
                                     color:
                                         isFavorite
-                                            ? Colors.purpleAccent
-                                            : Colors.pinkAccent,
+                                            ? Colors.pinkAccent
+                                            : Colors.grey,
                                   ),
                                 ),
                               ),

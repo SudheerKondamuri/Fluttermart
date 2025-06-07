@@ -1,14 +1,12 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'animated_slide_card.dart'; // if extracted separately
+import 'animated_slide_card.dart';
 
 void showAddToCartOverlay(BuildContext context, String productName) {
   final overlay = Overlay.of(context);
 
-  // Declare the overlayEntry first using `late`
   late OverlayEntry overlayEntry;
 
-  // Initialize the overlayEntry
   overlayEntry = OverlayEntry(
     builder: (context) => Stack(
       children: [
@@ -36,6 +34,5 @@ void showAddToCartOverlay(BuildContext context, String productName) {
     ),
   );
 
-  // Insert the overlayEntry into the overlay
   overlay.insert(overlayEntry);
 }
