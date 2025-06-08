@@ -286,7 +286,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: MyColors.gold,
-                padding: const EdgeInsets.symmetric(vertical: 16),
+                padding: const EdgeInsets.symmetric(vertical: 18),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -301,9 +301,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               child: Text(
                 'Add to cart',
                 style: GoogleFonts.poppins(
-                  color: Colors.black,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ),

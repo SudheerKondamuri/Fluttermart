@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttermart/pages/colors.dart';
+import 'package:fluttermart/pages/discover_page.dart';
 import 'package:fluttermart/pages/product_details_page.dart';
 import 'package:fluttermart/pages/wishlist_items.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,7 +25,7 @@ class _WishlistPageState extends State<WishlistPage> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(Icons.arrow_back_ios),
+          icon: Icon(Icons.arrow_back_ios, color: Colors.white),
         ),
         backgroundColor: Colors.transparent,
         titleSpacing: -8,
@@ -41,7 +42,50 @@ class _WishlistPageState extends State<WishlistPage> {
         padding: EdgeInsets.symmetric(horizontal: 15),
         child:
             wishListItems.isEmpty
-                ? Center(child: Text('No items Added'))
+                ? Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Your wishlist is empty',
+                        style: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: MyColors.gold,
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 22,
+                            vertical: 16,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => DiscoverPage(initialIndex: 0),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'Shop Now',
+                          style: GoogleFonts.poppins(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
                 : GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
@@ -52,8 +96,8 @@ class _WishlistPageState extends State<WishlistPage> {
                   itemCount: wishListItems.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
-                      onTap: () {
-                        Navigator.push(
+                      onTap: () async {
+                        await Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder:
@@ -72,6 +116,10 @@ class _WishlistPageState extends State<WishlistPage> {
                                 ),
                           ),
                         );
+
+                        if (mounted) {
+                          setState(() {});
+                        }
                       },
                       child: wishListProductcard(
                         wishListItems[index].path,

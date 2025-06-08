@@ -1,7 +1,6 @@
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:fluttermart/pages/colors.dart';
 import 'package:fluttermart/pages/discover_page.dart';
 import 'package:fluttermart/pages/search_page.dart';
 import 'package:fluttermart/pages/wishlist_page.dart';
@@ -43,7 +42,6 @@ class _HomePageState extends State<HomePage> {
         precacheImage(AssetImage(img), context);
       }
     });
-
     _pageController.addListener(() {
       final currentPage = _pageController.page?.round() ?? 0;
       if (_currentPage != currentPage) {

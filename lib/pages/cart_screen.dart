@@ -127,32 +127,39 @@ class CartScreen extends StatelessWidget {
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
-    style: ElevatedButton.styleFrom(
-                      backgroundColor: isCartEmpty ? Colors.grey[800] : const Color(0xFFC9A86B),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                    ),
-                    onPressed: isCartEmpty
+                style: ElevatedButton.styleFrom(
+                  backgroundColor:
+                      isCartEmpty ? Colors.grey[800] : const Color(0xFFC9A86B),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                onPressed:
+                    isCartEmpty
                         ? null
                         : () {
-                            showDialog(
-                              context: context,
-                              barrierDismissible: true,
-                              builder: (_) => const OrderSuccessPopup(),
-                            );
-                            Future.delayed(const Duration(milliseconds: 100), () {
-                              Provider.of<CartProvider>(context, listen: false).clearCart();
-                            });
-                          },
-                    child: Text(
-                      isCartEmpty ? 'No items in cart' : 'Place Order',
-                      style: TextStyle(
-                        color: isCartEmpty ? const Color(0xFFC9A86B) : Colors.black87,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        fontFamily: 'Poppins',
-                      ),
-                    ),
+                          showDialog(
+                            context: context,
+                            barrierDismissible: true,
+                            builder: (_) => const OrderSuccessPopup(),
+                          );
+                          Future.delayed(const Duration(milliseconds: 100), () {
+                            Provider.of<CartProvider>(
+                              context,
+                              listen: false,
+                            ).clearCart();
+                          });
+                        },
+                child: Text(
+                  isCartEmpty ? 'No items in cart' : 'Place Order',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    fontFamily: 'Poppins',
                   ),
+                ),
+              ),
             ),
           ],
         ),
