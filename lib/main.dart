@@ -6,12 +6,9 @@ import 'package:provider/provider.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   PaintingBinding.instance.imageCache.maximumSizeBytes = 100 << 20;
-
   runApp(
     MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => CartProvider()),
-      ],
+      providers: [ChangeNotifierProvider(create: (_) => CartProvider())],
       child: const MyApp(),
     ),
   );

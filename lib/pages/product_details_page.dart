@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:fluttermart/models/product.dart';
 import 'package:fluttermart/pages/cart_provider.dart';
+import 'package:fluttermart/pages/colors.dart';
+import 'package:fluttermart/pages/wishlist_items.dart';
+import 'package:fluttermart/pages/wishlist_page.dart';
 import 'package:fluttermart/widgets/overlay_helpers.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class ListItemPage extends StatefulWidget {
+class ProductDetailsPage extends StatefulWidget {
   final String name;
   final int price;
   final List<String> images;
   final String description;
   final String rating;
 
-  const ListItemPage({
+  const ProductDetailsPage({
     super.key,
     required this.name,
     required this.price,
@@ -23,10 +26,10 @@ class ListItemPage extends StatefulWidget {
   });
 
   @override
-  State<ListItemPage> createState() => _ListItemPageState();
+  State<ProductDetailsPage> createState() => _ProductDetailsPageState();
 }
 
-class _ListItemPageState extends State<ListItemPage> {
+class _ProductDetailsPageState extends State<ProductDetailsPage> {
   int selectedColorIndex = 0;
   bool isFavorite = false;
 
@@ -37,6 +40,20 @@ class _ListItemPageState extends State<ListItemPage> {
     Color(0xFF00C6C6),
     Color(0xFFFFFFFF),
   ];
+  @override
+  void initState() {
+    super.initState();
+    _checkIfItemInWishlist();
+  }
+
+  void _checkIfItemInWishlist() {
+    isFavorite = wishListItems.any(
+      (item) =>
+          item.path == widget.images[0] &&
+          item.name == widget.name &&
+          item.price == widget.price.toString(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -138,7 +155,33 @@ class _ListItemPageState extends State<ListItemPage> {
                                 ),
                                 child: IconButton(
                                   onPressed: () {
-                                    setState(() => isFavorite = !isFavorite);
+                                    setState(() {
+                                      isFavorite = !isFavorite;
+                                      if (isFavorite &&
+                                          wishListItems.any(
+                                                (item) =>
+                                                    item.path ==
+                                                        widget.images[0] &&
+                                                    item.name == widget.name,
+                                              ) ==
+                                              false) {
+                                        wishListItems.add(
+                                          WishlistItems(
+                                            path: widget.images[0],
+                                            name: widget.name,
+                                            price: widget.price.toString(),
+                                          ),
+                                        );
+                                      } else {
+                                        wishListItems.removeWhere(
+                                          (item) =>
+                                              item.name == widget.name &&
+                                              item.path == widget.images[0] &&
+                                              item.price ==
+                                                  widget.price.toString(),
+                                        );
+                                      }
+                                    });
                                   },
                                   icon: Icon(
                                     Icons.favorite,
@@ -242,10 +285,10 @@ class _ListItemPageState extends State<ListItemPage> {
             right: 20,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFF5C35D),
+                backgroundColor: MyColors.gold,
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(12),
                 ),
               ),
               onPressed: () {

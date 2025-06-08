@@ -1,16 +1,18 @@
-# fluttermart
+# 🪑 FlutterMart – Furniture eCommerce App UI
 
-A new Flutter project.
+FlutterMart is a beautifully designed static eCommerce app UI for a modern furniture store, built with Flutter. It includes multi-screen navigation, elegant product cards, wishlist logic (optional via Provider), and reusable components. The app simulates a real shopping experience — minus backend integration.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+- 🏠 Home Page with product showcase
+- 🔍 Discover/Explore Page with categories
+- 🛒 Product Details UI
+- ❤️ Wishlist UI (static or Provider-based)
+- 🧭 Bottom Navigation Bar with active tab state
+- 🖼️ Clean product card designs with image, title, price
+- 🎯 Responsive layout and scroll handling
+- 🧩 Modular code with reusable widgets
+- 💡 Splash screen 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

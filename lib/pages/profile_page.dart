@@ -20,6 +20,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       backgroundColor: Colors.grey.shade900,
       appBar: AppBar(
+        surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.transparent,
         titleSpacing: 25,
         elevation: 0,

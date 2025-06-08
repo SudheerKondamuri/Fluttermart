@@ -47,7 +47,7 @@ final Map<String, List<Map<String, dynamic>>> productData = {
       "price": 2959,
       "image": "assets/images/chair2.jpg",
     },
-    {"name": "520 Chair", "price": 899, "image": "assets/images/chair3.jpg"},
+    {"name": "520 Chair", "price": 8999, "image": "assets/images/chair3.jpg"},
     {"name": "Cafe Chair", "price": 8250, "image": "assets/images/chair4.jpg"},
     {
       "name": "Accent Chair",
@@ -71,12 +71,36 @@ final Map<String, List<Map<String, dynamic>>> productData = {
     },
   ],
   "Bed": [
-    {"name": "T-shirt", "price": 1499, "image": "assets/images/bed1.jpg"},
-    {"name": "T-shirt", "price": 1499, "image": "assets/images/bed2.jpg"},
-    {"name": "T-shirt", "price": 1499, "image": "assets/images/bed3.jpg"},
-    {"name": "T-shirt", "price": 1499, "image": "assets/images/bed4.jpg"},
-    {"name": "T-shirt", "price": 1499, "image": "assets/images/bed5.jpg"},
-    {"name": "T-shirt", "price": 1499, "image": "assets/images/bed6.jpg"},
+    {
+      "name": "Brooklyn Bed Frame",
+      "price": 23422,
+      "image": "assets/images/bed1.jpg",
+    },
+    {
+      "name": "Divan Set Frame",
+      "price": 34202,
+      "image": "assets/images/bed2.jpg",
+    },
+    {
+      "name": "Superking Bed Frame",
+      "price": 107702,
+      "image": "assets/images/bed3.jpg",
+    },
+    {
+      "name": "Mayfair Bed Frame",
+      "price": 122402,
+      "image": "assets/images/bed4.jpg",
+    },
+    {
+      "name": "Athens Bed Frame",
+      "price": 61642,
+      "image": "assets/images/bed5.jpg",
+    },
+    {
+      "name": "Oxford Bed Frame",
+      "price": 73402,
+      "image": "assets/images/bed6.jpg",
+    },
   ],
   "Sofa": [
     {
@@ -106,8 +130,61 @@ final Map<String, List<Map<String, dynamic>>> productData = {
       "image": "assets/images/sofa6.jpg",
     },
   ],
-  "Table": [],
-  "Shelf": [],
+  "Table": [
+    {
+      "name": "Ceramic Dining Table",
+      "price": 13751,
+      "image": "assets/images/table1.jpg",
+    },
+    {
+      "name": "Vegas Light Grey Table",
+      "price": 20452,
+      "image": "assets/images/table2.jpg",
+    },
+    {
+      "name": "Denver Dining Table",
+      "price": 30872,
+      "image": "assets/images/table3.jpg",
+    },
+    {
+      "name": "Extendable Table",
+      "price": 31973,
+      "image": "assets/images/table4.jpg",
+    },
+  ],
+
+  "Shelf": [
+    {
+      "name": "Voss-TV & Media Table",
+      "price": 11760,
+      "image": "assets/images/shelf1.jpg",
+    },
+    {
+      "name": "Brooklyn Bookcase",
+      "price": 9800,
+      "image": "assets/images/shelf2.jpg",
+    },
+    {
+      "name": "Huntington Shelf",
+      "price": 15680,
+      "image": "assets/images/shelf3.jpg",
+    },
+    {
+      "name": "Castro Case",
+      "price": 29400,
+      "image": "assets/images/shelf4.jpg",
+    },
+    {
+      "name": "Vista Display Shelf",
+      "price": 12740,
+      "image": "assets/images/shelf5.jpg",
+    },
+    {
+      "name": "Vista BedCase",
+      "price": 10499,
+      "image": "assets/images/shelf6.jpg",
+    },
+  ],
 };
 
 class ProductCard extends StatelessWidget {
