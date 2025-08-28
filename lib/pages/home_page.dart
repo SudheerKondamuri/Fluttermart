@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
         duration: const Duration(milliseconds: 500),
         curve: Curves.easeInOut,
       );
-  });
+    });
   }
 
   @override
@@ -82,41 +82,41 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: Colors.grey.shade900,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        surfaceTintColor: Colors.transparent,
-        elevation: 0,
-        title: Text(
-          "Fluttermart",
-          style: GoogleFonts.poppins(
-            fontSize: 28,
-            color: const Color.fromARGB(255, 255, 255, 255),
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => SearchPage()),
-              );
-            },
-            icon: const Icon(FeatherIcons.search, color: Colors.white),
-          ),
-          IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => WishlistPage()),
-              );
-            },
-            icon: const Icon(FeatherIcons.heart, color: Colors.white),
-          ),
-        ],
-      ),
       body: CustomScrollView(
         slivers: [
+          SliverAppBar(
+            backgroundColor: Colors.transparent,
+            surfaceTintColor: Colors.transparent,
+            elevation: 0,
+            title: Text(
+              "Fluttermart",
+              style: GoogleFonts.poppins(
+                fontSize: 28,
+                color: const Color.fromARGB(255, 255, 255, 255),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            actions: [
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => SearchPage()),
+                  );
+                },
+                icon: const Icon(FeatherIcons.search, color: Colors.white),
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => WishlistPage()),
+                  );
+                },
+                icon: const Icon(FeatherIcons.heart, color: Colors.white),
+              ),
+            ],
+          ),
           SliverToBoxAdapter(
             child: SizedBox(
               height: 500,

@@ -1,7 +1,6 @@
 import 'package:fluttermart/pages/product_details_page.dart';
 import 'package:fluttermart/pages/wishlist_page.dart';
 import 'Product_items.dart';
-import 'Categories_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:feather_icons/feather_icons.dart';

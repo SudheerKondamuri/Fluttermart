@@ -1,3 +1,5 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttermart/pages/cart_provider.dart';
@@ -13,7 +15,7 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => CartProvider())],
-      child: const MyApp(),
+      child: kIsWeb ? DevicePreview(builder:(_)=> MyApp()) : const MyApp(),
     ),
   );
 }
